@@ -52,32 +52,51 @@ export default class HomeScreen extends Component {
             <View style={styles.catcontainer}>
                 <View style={styles.testContain}>
                     <View style={{
-                        flex: 0.15,
+                        flex: 0.05,
                         flexDirection: 'column',
-                        justifyContent: 'center',
+                        justifyContent: 'space-between',
                         alignItems: 'center'
                     }}>
-                        <Text>{data.item.totalVoted}</Text>
-                    </View>
-                    <View style={{flex: 0.05, flexDirection: 'column'}}/>
-                    <View style={{flex: 0.15, flexDirection: 'column', paddingLeft: 15}}>
                         <Image
-                            style={{height: 200, width: 50}}
+                            style={{height: 25, width: 25}}
+                            source={require('./component/assets/up-arrow.png')}
+                        />
+                        <View style={{marginBottom:30,marginTop:30}}>
+                            <Text>{data.item.totalVoted}</Text>
+                        </View>
+                        <Image
+                            style={{height: 25, width: 25}}
+                            source={require('./component/assets/down-arrow.png')}
+                        />
+                    </View>
+                    <View style={{flex: 0.25, flexDirection: 'column', paddingLeft: 15}}>
+                        <Image
+                            style={{height: 200, width: 100}}
                             source={{uri: url}}
                         />
                     </View>
-                    <View style={{flex: 0.05}}/>
-                    <View style={{flex: 0.55, flexDirection: 'column'}}>
+                    <View style={{flex: 0.1}}/>
+                    <View style={{flex: 0.6, flexDirection: 'column'}}>
                         <View style={{
                             flex: 1,
                             flexDirection: 'column',
                             justifyContent: 'center',
-                            width: '100%',
+                            width: '98%',
+
                         }}>
-                            <Text style={{fontSize: 18, fontWeight: '500'}}>{data.item.title}</Text>
-                            <Text style={{fontSize: 16, fontWeight: '400'}}>Genre : {data.item.genre}</Text>
-                            <Text style={{fontSize: 16, fontWeight: '400'}}>Director : {data.item.director[0]}</Text>
-                            <Text style={{fontSize: 16, fontWeight: '400'}}>Director : {data.item.director[0]}</Text>
+                            <Text style={{fontSize: 20, fontWeight: '500'}}>{data.item.title}</Text>
+                            <View style={{flexx: 1, flexDirection: 'row',}}>
+                                <Text style={{fontSize: 17, fontWeight: '400', color: '#bdbba9'}}>Genre : </Text>
+                                <Text style={{fontSize: 14, fontWeight: '400'}}> {data.item.genre}</Text>
+                            </View>
+                            <View style={{flexx: 1, flexDirection: 'row',}}>
+                                <Text style={{fontSize: 16, fontWeight: '400', color: '#bdbba9'}}>Director : </Text>
+                                <Text style={{fontSize: 14, fontWeight: '400'}}>{data.item.director[0]}</Text>
+                            </View>
+                            <View style={{flexx: 1, flexDirection: 'row',}}>
+                                <Text style={{fontSize: 16, fontWeight: '400', color: '#bdbba9'}}>Starring : </Text>
+                                <Text style={{fontSize: 14, fontWeight: '400'}}>{data.item.stars[0]}</Text>
+                            </View>
                         </View>
                     </View>
                 </View>

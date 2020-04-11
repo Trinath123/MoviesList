@@ -6,6 +6,7 @@ import {createStackNavigator} from 'react-navigation-stack';
 import Screen1 from '../src/HomeScreen';
 import Screen3 from '../src/ProfileDetails';
 import Screen2 from '../src/Notification';
+import Screen4 from '../src/CompanyInfo';
 
 class NavigationDrawerStructure extends Component {
     toggleDrawer = () => {
@@ -68,6 +69,21 @@ const Screen3_StackNavigator = createStackNavigator({
     },
 });
 
+const Screen4_StackNavigator = createStackNavigator({
+    Fourth: {
+        screen: Screen4,
+        navigationOptions: ({navigation}) => ({
+            title: 'Company Info',
+            headerLeft: <NavigationDrawerStructure navigationProps={navigation}/>,
+            headerStyle: {
+                backgroundColor: '#283f78',
+            },
+            headerTintColor: '#fff',
+        }),
+    },
+});
+
+
 const MainNavigation = createDrawerNavigator({
     Screen1: {
         screen: FirstActivity_StackNavigator,
@@ -85,6 +101,12 @@ const MainNavigation = createDrawerNavigator({
         screen: Screen3_StackNavigator,
         navigationOptions: {
             drawerLabel: 'Notification',
+        },
+    },
+    Screen4: {
+        screen: Screen4_StackNavigator,
+        navigationOptions: {
+            drawerLabel: 'Company Info',
         },
     },
 });
