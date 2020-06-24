@@ -65,6 +65,8 @@ export default class CompanyInfo extends Component {
 }
 
 
+
+
 const styles = StyleSheet.create({
     Container: {
         flex: 1,
